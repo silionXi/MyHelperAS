@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lee="http://schemas.android.com/apk/res/com.lee.my.helper"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="3dip" >
+
+    <LinearLayout
+        android:id="@+id/lin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
+        android:paddingTop="10dip" >
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/used"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dip" />
+    </LinearLayout>
+
+    <com.lee.my.helper.meter.MeterView
+        android:id="@+id/memery"
+        android:layout_width="76dip"
+        android:layout_height="76dip"
+        android:layout_marginLeft="20dip"
+        android:layout_toRightOf="@id/lin"
+        lee:arcColor="0xFF0AFFFF"
+        lee:radius="38dip" />
+
+    <Button
+        android:id="@+id/restore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="6dip"
+        android:onClick="onClick"
+        android:text="还原" />
+
+    <Button
+        android:id="@+id/checkAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/restore"
+        android:layout_marginRight="6dip"
+        android:onClick="onClick"
+        android:text="全选" />
+
+    <ListView
+        android:id="@+id/apps"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkAll"
+        android:layout_marginTop="3dip"
+        android:cacheColorHint="#00000000" />
+
+</RelativeLayout>
